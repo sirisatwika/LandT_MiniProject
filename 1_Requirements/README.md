@@ -24,7 +24,7 @@ The main aim of Calculator application is o solve mathematical calculations easi
 * To find XOR of numbers
 
 ## SWOT Analysis
-![](SWOT.png)
+![](swot.png)
 
 # High and Low Level Requirements
 
