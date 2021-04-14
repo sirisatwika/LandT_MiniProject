@@ -1,0 +1,9 @@
+# Doxyfile 1.8.13
+DOXYFILE_ENCODING  = UTF-8
+PROJECT_NAME  = Calculator
+OUTPUT_LANGUAGE  = English
+TAB_SIZE = 4
+FILE_PATTERNS     =  *.c \
+                     *.md \
+                     *.dox \
+                     *.h
