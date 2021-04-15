@@ -67,7 +67,7 @@ int main(){
                 printf("Enter the second number : \n");
                 scanf("%d",&b);
                 int ansxor = xorop(a,b);
-                printf("Xor of numbers is %d: \n",anspow);
+                printf("Xor of numbers is %d: \n",ansxor);
                 break;
             case '>':
                 printf("Enter the first number : \n");
@@ -94,7 +94,7 @@ int main(){
                     printf("Wrong inputs please provide the correct input.\n");
                     //operations();
                 }
-                int ansper = permutation(a,b);
+                int ansper = permutation(n,r);
                 printf("Permuatation of numbers is %d: \n",ansper);
                 break;
             case 'C':
@@ -105,9 +105,11 @@ int main(){
                 if(n < r){
                     printf("Wrong inputs please provide the correct input.\n");
                     //operations();
-                }
-                int anscom = combination(a,b);
+                }else{
+                int anscom = combination(n,r);
                 printf("Combination of numbers is %d: \n",anscom);
+                
+                }
                 break;
             case 'e':
                 exit(0);
@@ -166,18 +168,14 @@ int powe(int a,int b){
 }
 int fact(int a){
     int i,fact=1;
-    if (a < 0){
-        printf("\nPlease enter a positive number to find factorial and try again. \n");
-        return 1;
-    }
     for(i = 1;i <= a;i++){
         fact = fact*i;
     }
     return fact;
 }
 int xorop(int a,int b){
-    int c = 0;
-    c = a ^ b;
+    int c =0;
+    c =  a ^ b;
     return c;
 }
 int max(int a,int b){
