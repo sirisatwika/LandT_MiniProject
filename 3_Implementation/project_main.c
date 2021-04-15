@@ -1,18 +1,18 @@
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
-void add();
-void sub();
-void mul();
-void divi();
-void mod();
-void powe();
-int fact();
-void xor();
-void max();
-void min();
-//void permutation();
-//void combination();
+int add(int,int);
+int sub(int,int);
+int mul(int,int);
+int divi(int,int);
+int mod(int,int);
+int powe(int,int);
+int fact(int);
+int xor(int,int);
+int max(int,int);
+int min(int,int);
+int permutation(int,int);
+int combination(int,int);
 void operations();
 int main(){
     operations();
@@ -21,50 +21,117 @@ int main(){
         printf("\n");
         scanf("%c",&ch);
         switch(ch){
+            int a,b,n,r;
             case '+':
-                add();
+                printf("Enter the first number to be added : \n");
+                scanf("%d",&a);
+                printf("Enter the first number to be added : \n");
+                scanf("%d",&b);
+                int ansadd = add(a,b);
+                printf("sum of numbers is %d: \n",ansadd);
                 break;
             case '-':
-                sub();
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int anssub = sub(a,b);
+                printf("Difference of numbers is %d: \n",anssub);
                 break;
             case '*':
-                mul();
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int ansmul = mul(a,b);
+                printf("Product of numbers is %d: \n",ansmul);
                 break;
             case '/':
-                divi();
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int ansdiv = divi(a,b);
+                printf("Division of numbers is %d: \n",ansdiv);
                 break;
-            case '?':
-                mod();
+            case 'm':
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int ansmod = mod(a,b);
+                printf("Mod of numbers is %d: \n",ansmod);
                 break;
             case '!':
-                fact();
+                printf("Enter the a number : \n");
+                scanf("%d",&a);
+                int ansfact = fact(a);
+                printf("Factorial of number is %d: \n",ansfact);
                 break;
             case 'p':
-                powe();
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int anspow = powe(a,b);
+                printf("Power of number is %d: \n",anspow);
                 break;
             case '^':
-                xor();
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int ansxor = xor(a,b);
+                printf("Xor of numbers is %d: \n",anspow);
                 break;
             case '>':
-                max();
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int ansmax = max(a,b);
+                printf("Max of numbers is %d: \n",ansmax);
                 break;
             case '<':
-                min();
+                printf("Enter the first number : \n");
+                scanf("%d",&a);
+                printf("Enter the second number : \n");
+                scanf("%d",&b);
+                int ansmin = min(a,b);
+                printf("Min of numbers is %d: \n",ansmin);
                 break;
-            /*case 'P':
-                permutation();
+            case 'P':
+                printf("Enter the first number : \n");
+                scanf("%d",&n);
+                printf("Enter the second number : \n");
+                scanf("%d",&r);
+                if(n < r){
+                    printf("Wrong inputs please provide the correct input.\n");
+                    //operations();
+                }
+                int ansper = permutation(a,b);
+                printf("Permutation of numbers is %d: \n",ansper);
                 break;
             case 'C':
-                combination();
-                break;*/
+                printf("Enter the first number : \n");
+                scanf("%d",&n);
+                printf("Enter the second number : \n");
+                scanf("%d",&r);
+                if(n < r){
+                    printf("Wrong inputs please provide the correct input.\n");
+                    //operations();
+                }
+                int anscom = combination(a,b);
+                printf("Combination of numbers is %d: \n",anscom);
+                break;
             case 'e':
                 exit(0);
                 break;
-            default :
+            default:
                 operations();
+                break;
+               }
         }
-    }
-
 }
 void operations(){
     printf("\nWelcome to C calculator displaying the available option \n\n");
@@ -72,7 +139,7 @@ void operations(){
     printf("Enter - symbol for Subtraction \n");
     printf("Enter * symbol for Multiplication \n");
     printf("Enter / symbol for Division \n");
-    printf("Enter ? symbol for Modulus\n");
+    printf("Enter m symbol for Modulus\n");
     printf("Enter p symbol for Power \n");
     printf("Enter ! symbol for Factorial\n");
     printf("Enter ^ symbol for XOR \n");
@@ -82,136 +149,76 @@ void operations(){
     printf("Enter C symbol for Min num\n");
     printf("Enter e if you want to exit\n");
 }
-void add(){
-    int n, sum = 0, k=0, num;
-    printf("\nEnter the number of elements you want to add:");
-    scanf("%d",&n);
-    printf("Please enter %d numbers one by one: \n",n);
-    while(k<n){
-        scanf("%d",&num);
-        sum +=num;
-        k=k+1;
-    }
-    printf("Sum of %d numbers = %d \n",n,sum);
+int add(int a, int b){
+    int sum = 0;
+    sum = a + b;
+    return sum;
 }
-void sub(){
-    int a, b, c = 0;
-    printf("\nPlease enter first number  : ");
-    scanf("%d", &a);
-    printf("Please enter second number : ");
-    scanf("%d", &b);
+int sub(int a, int b){
+    int  c = 0;
     c = a - b;
-    printf("\nDiffrence of the number is = %d\n",c);
+    return c;
 }
-void mul(){
-    int a, b, mul=0;
-    printf("\nPlease enter first number : ");
-    scanf("%d", &a);
-    printf("Please enter second number : ");
-    scanf("%d", &b);
-    mul=a*b;
-    printf("\nMultiplication of entered numbers = %d\n",mul);
+int mul(int a,int b){
+    int ans = 0;
+    ans = a*b;
+    return ans;
 }
-void divi(){
-    int a, b, d=0;
-    printf("\nPlease enter first number : ");
-    scanf("%d", &a);
-    printf("Please enter second number : ");
-    scanf("%d", &b);
-    d=a/b;
-    printf("\nDivision of entered numbers = %d\n",d);
+int divi(int a,int b){
+    int c = 0;
+    c = a/b;
+    return c;
 }
-void mod(){
-    int a, b, d=0;
-    printf("\nPlease enter first number : ");
-    scanf("%d", &a);
-    printf("Please enter second number : ");
-    scanf("%d", &b);
-    d=a%b;
-    printf("\nModulus of entered numbers = %d\n",d);
+int mod(int a,int b){
+    int c = 0;
+    c = a%b;
+    return c;
 }
-void powe(){
-    double a,num, p;
-    printf("\nEnter two numbers to find the power \n");
-    scanf("%lf",&a);
-    printf("power : ");
-    scanf("%lf",&num);
-    p =pow(a,num);
-    printf("\n%lf to the power %lf = %lf \n",a,num,p);
+int powe(int a,int b){
+    int c;
+    c = pow(a,b);
+    return c;
 }
-int fact(){
-    int i,fact=1,num;
-    printf("\nEnter a number to find factorial : ");
-    scanf("%d",&num);
-    if (num<0){
+int fact(int a){
+    int i,fact=1;
+    if (a < 0){
         printf("\nPlease enter a positive number to find factorial and try again. \n");
         return 1;
     }
-    for(i=1;i<=num;i++)
-    fact=fact*i;
-    printf("\n");
-    printf("Factorial of entered number %d is:%d\n",num,fact);
-    return 0;
+    for(i = 1;i <= a;i++){
+        fact = fact*i;
+    }
+    return fact;
 }
-void xor(){
-    int a,b,c;
-    printf("\nPlease enter first number   : ");
-    scanf("%d", &a);
-    printf("Please enter second number  : ");
-    scanf("%d", &b);
+int xor(int a,int b){
+    int c = 0;
     c = a ^ b;
-    printf("\nXOR of entered numbers = %d\n",c); 
+    return c;
 }
-void max(){
-    int a,b,c;
-    printf("\nPlease enter first number   : ");
-    scanf("%d", &a);
-    printf("Please enter second number  : ");
-    scanf("%d", &b);
+int max(int a,int b){
+    int c;
     if(a > b){
         c = a;
     }else{
         c = b;
     }
-    printf("\nMax of entered numbers = %d\n",c); 
+    return c;
 }
-void min(){
-    int a,b,c;
-    printf("\nPlease enter first number   : ");
-    scanf("%d", &a);
-    printf("Please enter second number  : ");
-    scanf("%d", &b);
+int min(int a,int b){
+     int c;
     if(a > b){
         c = b;
     }else{
         c = a;
     }
-    printf("\nMin of entered numbers = %d\n",c); 
+    return c;
 }
-/*void permutation(){
-    int n,r;
-    printf("Enter the value of n : \n");
-    scanf("%d",&n);
-    printf("Enter the value of r : \n");
-    scanf("%d",&r);
-    if(n < r){
-        printf("Wrong inputs please provide the correct input.\n");
-        permutation();
-    }
+int permutation(int n,int r){
     int res = fact(n)/fact(n-r);
-    printf("The nPr value is %d = ", res);
+    return res;
 }
-void combination(){
-    int n,r;
-    printf("Enter the value of n : \n");
-    scanf("%d",&n);
-    printf("Enter the value of r : \n");
-    scanf("%d",&r);
-    if(n < r){
-        printf("Wrong inputs please provide the correct input.\n");
-        combination();
-    }
+int combination(int n,int r){
     int res = fact(n)/(fact(n-r) * fact(r));
-    printf("The nCr value is %d = ", res);
-}*/
+    return res;
+}
 
