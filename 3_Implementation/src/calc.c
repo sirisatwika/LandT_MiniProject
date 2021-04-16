@@ -136,36 +136,84 @@ void operations(){
     printf("Enter C symbol for Min num\n");
     printf("Enter e if you want to exit\n");
 }
+/**
+ * @brief 
+ * This function will add two numbers and return the answer
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int add(int a, int b){
     int sum = 0;
     sum = a + b;
     return sum;
 }
+/**
+ * @brief 
+ * This function will Subtract two numbers and return the answer
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int sub(int a, int b){
     int  c = 0;
     c = a - b;
     return c;
 }
+/**
+ * @brief 
+ * This function will Multiply two numbers and return the answer
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int mul(int a,int b){
     int ans = 0;
     ans = a*b;
     return ans;
 }
+/**
+ * @brief 
+ * This function will divide the number and return the answer
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int divi(int a,int b){
     int c = 0;
     c = a/b;
     return c;
 }
+/**
+ * @brief 
+ * This function will perform modulus operation of two numbers and return the answer
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int mod(int a,int b){
     int c = 0;
     c = a%b;
     return c;
 }
+/**
+ * @brief 
+ * This function will raise a number to its power.
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int powe(int a,int b){
     int c;
     c = pow(a,b);
     return c;
 }
+/**
+ * @brief 
+ * This function will find the factorial of a number.
+ * @param a 
+ * @return int 
+ */
 int fact(int a){
     int i,fact=1;
     for(i = 1;i <= a;i++){
@@ -173,11 +221,25 @@ int fact(int a){
     }
     return fact;
 }
+/**
+ * @brief 
+ * This function will XOR two numbers and return the answer 
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int xorop(int a,int b){
     int c =0;
     c =  a ^ b;
     return c;
 }
+/**
+ * @brief 
+ * This function will find the maximum of the two numbers and return the answer
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int max(int a,int b){
     int c;
     if(a > b){
@@ -187,6 +249,13 @@ int max(int a,int b){
     }
     return c;
 }
+/**
+ * @brief 
+ * This function will find the minimum of the  two numbers and return the answer
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int min(int a,int b){
      int c;
     if(a > b){
@@ -196,10 +265,24 @@ int min(int a,int b){
     }
     return c;
 }
+/**
+ * @brief 
+ * This function will afind the permuation.
+ * @param n 
+ * @param r 
+ * @return int 
+ */
 int permutation(int n,int r){
     int res = fact(n)/fact(n-r);
     return res;
 }
+/**
+ * @brief 
+ * This function will find the combination.
+ * @param n 
+ * @param r 
+ * @return int 
+ */
 int combination(int n,int r){
     int res = fact(n)/(fact(n-r) * fact(r));
     return res;
